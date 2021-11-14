@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
-import { getMoviesAction } from "../actions/moviesActions";
-import axios from "axios";
-import Router from "../routing/Router";
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { getMoviesAction } from '../actions/moviesActions';
+import axios from 'axios';
+import Router from '../routing/Router';
 
 const Root = ({ getMoviesFn, pageNumber, favouriteMovies }) => {
   useEffect(() => {
-    localStorage.setItem("favMovies", JSON.stringify(favouriteMovies));
+    localStorage.setItem('favMovies', JSON.stringify(favouriteMovies));
   }, [favouriteMovies]);
 
   const getMovies = () => {
