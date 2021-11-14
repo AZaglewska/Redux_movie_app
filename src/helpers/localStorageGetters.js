@@ -1,11 +1,16 @@
-export const getFavMoviesFromLocalStorage = () => {
+export const getFavMoviesFromLocalStorage2 = () => {
   let favMoviesFromLocalStorage;
 
-  if (localStorage.getItem("favMovies")) {
-    favMoviesFromLocalStorage = JSON.parse(localStorage.getItem("favMovies"));
-  } else {
-    favMoviesFromLocalStorage = [];
-  }
+  localStorage.getItem('favMovies')
+    ? (favMoviesFromLocalStorage = JSON.parse(
+        localStorage.getItem('favMovies')
+      ))
+    : (favMoviesFromLocalStorage = []);
 
   return favMoviesFromLocalStorage;
 };
+
+export const getFavMoviesFromLocalStorage = () =>
+  localStorage.getItem('favMovies')
+    ? JSON.parse(localStorage.getItem('favMovies'))
+    : [];
